@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>Refresh Me</h1>
+      <h2 id="win" style="color: rgb(163, 25, 25); font-weight: bolder;background-color: rgb(255, 255, 255);font-family: 'Lobster', cursive;3"></h2>
+      <div class="dice">
+        <p>Player 1</p>
+        <div id="fbanner" class="first">
+          
+        </div>
+      </div>
+
+      <div class="dice">
+        <p>Player 2</p>
+        <div id="sbanner" class="second">
+          
+        </div>
+        
+      </div>
+
+    </div>
+    <footer>
+      www 🎲 App Brewery 🎲 com
+    </footer>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js'></script>
+    <script>
+      var images = ['dice1.png', 'dice2.png', 'dice3.png', 'dice4.png','dice5.png','dice6.png']
+      let a=(Math.round(Math.random() * 5))
+      let b=(Math.round(Math.random() * 5))
+      $('<img class="fade-in" src="images/' + images[a]+ '">').appendTo('#fbanner');
+      $('<img class="fade-in" src="images/' + images[b] + '">').appendTo('#sbanner');
+      if(a==b){
+        document.getElementById('win').innerHTML="draw"
+      }
+      if(a<b){
+        document.getElementById('win').innerHTML="player2 win"
+      }
+      if(a>b){
+        document.getElementById('win').innerHTML="player1 win"
+      }
+  
+  </script>
+  </body>
+
+ 
+</html>
